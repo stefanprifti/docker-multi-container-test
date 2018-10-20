@@ -20,3 +20,16 @@ after_success:
   - docker push stefanprifti/multi-nginx
   - docker push stefanprifti/multi-server
   - docker push stefanprifti/multi-worker
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: multi-docker
+  env: Prod
+  bucket_name: elasticbeanstalk-us-east-1-719080364157
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+    secure: $AWS_SECRET_KEY
