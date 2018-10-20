@@ -21,7 +21,6 @@ after_success:
   - docker push stefanprifti/multi-server
   - docker push stefanprifti/multi-worker
 
-
 deploy:
   provider: elasticbeanstalk
   region: us-east-1
